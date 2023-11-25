@@ -1,0 +1,181 @@
+﻿<UserControl x:Class="WebScrapingSample001.View.NavigationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WebScrapingSample001.View"
+             xmlns:viewModel ="clr-namespace:WebScrapingSample001.ViewModel"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280">
+    <UserControl.Resources>
+        <viewModel:DanawaViewModel x:Key="DanawaViewModel"/>
+        <viewModel:NaverShoppingViewModel x:Key="NaverShoppingViewModel"/>
+        
+        <viewModel:AllViewModel x:Key="AllViewModel"/>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Color Zone-->
+        <materialDesign:ColorZone Padding="16" Mode="PrimaryMid">
+            <DockPanel>
+                <!--<ToggleButton
+                    VerticalAlignment="Center"
+                    DockPanel.Dock="Right"
+                    Style="{StaticResource MaterialDesignSwitchSecondaryToggleButton}" />-->
+                <StackPanel
+                    materialDesign:RippleAssist.IsCentered="True"
+                    Orientation="Horizontal">
+                    <ToggleButton
+                        Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
+                    <!--<ComboBox
+                        Margin="8,0,0,0"
+                        materialDesign:ColorZoneAssist.Mode="Standard"
+                        materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource MaterialDesignPaper}"
+                        BorderBrush="{DynamicResource MaterialDesignPaper}"
+                        BorderThickness="0"
+                        SelectedIndex="0">
+                        <ComboBoxItem
+                            Content="All View" />
+                        <ComboBoxItem
+                            Content="Danawa" />
+                        <ComboBoxItem
+                            Content="Naver Shopping" />
+                    </ComboBox>-->
+                    <materialDesign:ColorZone
+                        Margin="16,0,0,0"
+                        Padding="8,4,8,4"
+                        Panel.ZIndex="1"
+                        materialDesign:ElevationAssist.Elevation="Dp2"
+                        CornerRadius="2"
+                        Mode="Standard">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition
+                                    Width="Auto" />
+                                <ColumnDefinition
+                                    Width="*" />
+                                <ColumnDefinition
+                                    Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Button
+                                Style="{StaticResource MaterialDesignToolButton}">
+                                <materialDesign:PackIcon
+                                    Kind="Search"
+                                    Opacity=".56" />
+                            </Button>
+                            <TextBox
+                                Grid.Column="1"
+                                MinWidth="200"
+                                Margin="8,0,0,0"
+                                VerticalAlignment="Center"
+                                materialDesign:HintAssist.Hint="Search"
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                BorderThickness="0">
+                                <TextBox.InputBindings>
+                                    <KeyBinding Key="Enter"
+                                                Command="{Binding KeyDownCmd}"
+                                                CommandParameter="{Binding Text, RelativeSource={RelativeSource AncestorType=TextBox, Mode=FindAncestor}}"/>
+                                </TextBox.InputBindings>
+                            </TextBox>
+                            <Button
+                                Grid.Column="2"
+                                Style="{StaticResource MaterialDesignToolButton}">
+                                <!--<materialDesign:PackIcon
+                                    Margin="8,0,0,0"
+                                    Kind="Microphone"
+                                    Opacity=".56" />-->
+                            </Button>
+                        </Grid>
+                    </materialDesign:ColorZone>
+                
+                </StackPanel>
+            </DockPanel>
+        </materialDesign:ColorZone>
+
+
+        <!--Card-->
+        <materialDesign:Card Grid.Row="1">
+            <TabControl
+                materialDesign:NavigationRailAssist.ShowSelectionBackground="True"
+                SnapsToDevicePixels="True"
+                Style="{StaticResource MaterialDesignNavigationRailTabControl}"
+                TabStripPlacement="Left">
+             
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel
+                            Width="auto"
+                            Height="auto">
+                            <materialDesign:PackIcon
+                                Width="24"
+                                Height="24"
+                                HorizontalAlignment="Center"
+                                Kind="ExpandAll" />
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                Text="All View" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <StackPanel Margin="16">
+
+                        <local:AllView DataContext="{StaticResource AllViewModel}"/>
+
+                    </StackPanel>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel
+                            Width="auto"
+                            Height="auto">
+                            <materialDesign:PackIcon
+                                Width="24"
+                                Height="24"
+                                HorizontalAlignment="Center"
+                                Kind="Basket" />
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                Text="Danawa" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <StackPanel Margin="16">
+                      
+                        <local:PriceComparisonView DataContext="{StaticResource DanawaViewModel}"/>
+
+                    </StackPanel>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel 
+                            Width="auto"
+                            Height="auto">
+                            <materialDesign:PackIcon 
+                                Width="24"
+                                Height="24"
+                                HorizontalAlignment="Center"
+                                Kind="BasketMinusOutline" />
+                            <TextBlock HorizontalAlignment="Center" Text="Naver" />
+                            <TextBlock HorizontalAlignment="Center" Text="Shopping" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <StackPanel Margin="16">
+
+                        <local:PriceComparisonView DataContext="{StaticResource NaverShoppingViewModel}"/>
+
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </materialDesign:Card>
+
+
+    </Grid>
+    
+    
+    
+</UserControl>
