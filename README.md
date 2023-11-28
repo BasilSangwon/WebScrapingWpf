@@ -12,7 +12,7 @@
 * Visual Studio 2022
 
 ## Screenshots
-<img width="768" alt="제목 없음" src="https://github.com/BasilSangwon/WebScrapingWpf/assets/93896928/acf7f771-a15d-4bc5-9db4-22586e726874">
+<img width="951" alt="image" src="https://github.com/BasilSangwon/WebScrapingWpf/assets/93896928/01011e49-7c7d-4330-a084-d2838738dde0">
 <img width="951" alt="image" src="https://github.com/BasilSangwon/WebScrapingWpf/assets/93896928/2468787d-ef59-45f3-aa9a-873c3f81aa61">
 <img width="951" alt="image" src="https://github.com/BasilSangwon/WebScrapingWpf/assets/93896928/c1a2a605-fb5d-4c57-9b20-7d2cc2f3fa0d">
 <img width="951" alt="image" src="https://github.com/BasilSangwon/WebScrapingWpf/assets/93896928/b0206fbb-9293-490a-b90e-c7e4457c8257">
