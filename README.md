@@ -13,6 +13,7 @@
 
 ## Screenshots
 <img width="768" alt="제목 없음" src="https://github.com/BasilSangwon/WebScrapingWpf/assets/93896928/acf7f771-a15d-4bc5-9db4-22586e726874">
-![image](https://github.com/BasilSangwon/WebScrapingWpf/assets/93896928/179c9e0d-f707-43ca-8cd3-bbb3f2baa070)
-![image](https://github.com/BasilSangwon/WebScrapingWpf/assets/93896928/8c9094f3-bcbb-49e7-81bc-6c5e5724996c)
-![image](https://github.com/BasilSangwon/WebScrapingWpf/assets/93896928/21013363-c07e-40a9-97bd-001f60c7b072)
+<img width="951" alt="image" src="https://github.com/BasilSangwon/WebScrapingWpf/assets/93896928/2468787d-ef59-45f3-aa9a-873c3f81aa61">
+<img width="951" alt="image" src="https://github.com/BasilSangwon/WebScrapingWpf/assets/93896928/c1a2a605-fb5d-4c57-9b20-7d2cc2f3fa0d">
+<img width="951" alt="image" src="https://github.com/BasilSangwon/WebScrapingWpf/assets/93896928/b0206fbb-9293-490a-b90e-c7e4457c8257">
+
